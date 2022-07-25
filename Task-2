@@ -1,0 +1,14 @@
+#Python if-else
+
+
+#CODE EXECUTED BY GURJEET SINGH
+
+f1 = int(input())
+if f1 % 2 == 1:
+    print("Weird")
+elif f1 % 2 == 0 and 2 <= f1 <= 5:
+    print("Not Weird")
+elif f1 % 2 == 0 and 6 <= f1 <= 20:
+    print("Weird")
+else:
+    print("Not Weird")            
