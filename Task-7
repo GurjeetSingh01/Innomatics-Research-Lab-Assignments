@@ -1,0 +1,11 @@
+# PRINT FUNCTION 
+
+
+#CODE EXECUTED BY GURJEET SINGH
+
+if __name__ == '__main__':
+    f1 = int(input())
+    for i in range(1, f1+1):
+        print(i, end="")
+        
+#THANKS 
