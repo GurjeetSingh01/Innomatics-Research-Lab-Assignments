@@ -1,0 +1,92 @@
+#SUCCESSFULLY EXECUTED BY GURJEET SINGH
+
+#PROBLEM --1 LIST COMPREHENSIONS
+
+x,y,z,n = [int(input()) for i in range(4)]
+print([[i,j,k] for i in range(x+1)
+ for j in range(y+1)
+  for k in range(z+1)
+   if ((i+j+k) != n)])
+   
+   
+#PROBLEM --2 Find the Runner-Up Score
+
+gg = int(raw_input())
+
+nums = map(int, raw_input().split())    
+print sorted(list(set(nums)))[-2]
+
+
+#PROBLEM --3 NESTED LISTS
+
+if __name__ == '__main__':
+    g= []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        g.append([score, name])
+
+    g.sort()
+    b = [i for i in g if i[0] != g[0][0]]
+    c = [j for j in b if j[0] == b[0][0]]
+    
+    c.sort(key=lambda x: x[1])
+    for i in range(len(c)):
+        print(c[i][1])
+        
+        
+        
+        
+        
+        
+#PROBLEM --4  Finding the percentage
+
+if __name__ == '__main__':
+    gg = int(input())
+    student_marks = {}
+    for _ in range(gg):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+
+    if query_name in student_marks:
+        g = ((float(student_marks[query_name][0]) + float(student_marks[query_name][1]) + float(student_marks[query_name][2])) / 3)
+    
+    print('%.2f' % g)
+    
+    
+#PROBLEM --5  String Split and Join
+
+def split_and_join(line):
+    line = line.split(" ")
+    line = "-".join(line)
+    return line
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
+    
+    
+    
+#PROBLEM --6 What's Your Name?
+
+def print_full_name(first, last):
+    # Write your code here
+    print("Hello {} {}! You just delved into python.".format(first,last))
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+    
+    
+    
+    
+    
+#PROBLEM --7 MUTATIONS
+string = input()
+line = input().split()
+i, c = int(line[0]), line[1]
+print(string[:i] + c + string[i+1:])
