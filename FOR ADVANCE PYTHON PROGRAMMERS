@@ -29,3 +29,24 @@ class Solution:
             gg.append(nums[g+n])
             
         return gg
+
+
+
+#TASK---3--->
+
+class Solution:
+#     O(n) || O(1)
+# Runtime: 54ms 64.17% memory: 13.9mb 62.75%
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        maxCandie = max(candies)
+        for gg, val in enumerate(candies):
+            # candies[gg] = True if not (val + extraCandies) < maxCandie else False
+            candies[gg] =  not (val + extraCandies) < maxCandie
+        
+        return candies
+	
+	
+	
+	
+	
+#THANKS:)
