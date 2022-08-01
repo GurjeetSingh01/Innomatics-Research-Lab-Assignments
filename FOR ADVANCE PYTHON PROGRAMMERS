@@ -1,7 +1,7 @@
 #EXECUTED BY GURJEET SINGH
 
 
-#TASK---1--
+#TASK---1--->
 
 class Solution(object):
     def runningSum(self, gg):     
@@ -16,3 +16,16 @@ class Solution(object):
             f1.append(currentSum)
         
         return f1
+
+
+
+#TASK---2--->
+
+class Solution:
+    def shuffle(self, nums, n):
+        gg = []
+        for g in range(n):
+            gg.append(nums[g])
+            gg.append(nums[g+n])
+            
+        return gg
