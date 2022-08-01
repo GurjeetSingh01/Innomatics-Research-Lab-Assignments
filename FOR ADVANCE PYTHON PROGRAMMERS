@@ -1,5 +1,8 @@
 #EXECUTED BY GURJEET SINGH
 
+
+#TASK---1--
+
 class Solution(object):
     def runningSum(self, gg):     
         g = len(gg)
