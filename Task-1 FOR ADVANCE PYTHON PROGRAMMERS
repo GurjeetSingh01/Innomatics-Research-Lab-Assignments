@@ -1,0 +1,15 @@
+#EXECUTED BY GURJEET SINGH
+
+class Solution(object):
+    def runningSum(self, gg):     
+        g = len(gg)
+        f1 = list()
+        
+        if g == 0: return f1
+		
+        currentSum = 0
+        for i in range(g):
+            currentSum += gg[i]
+            f1.append(currentSum)
+        
+        return f1
