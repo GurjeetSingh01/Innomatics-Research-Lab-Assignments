@@ -1,0 +1,64 @@
+
+#CODE SUCCESSFULLY EXECUTED BY GURJEET SINGH
+
+#-1. MAXIMUM PRODUCT OF TWO ELEMENTS IN AN ARRAY
+
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        
+        x = max(nums)
+        nums.remove(x)
+        y = max(nums)
+        
+        return (x - 1) * (y - 1)
+        
+ 
+#-2. COUNT NUMBER OF TEAMS
+
+class Solution:
+    def numTeams(self, rating: List[int]) -> int:
+        r, size = rating, len( rating )
+        
+		# compute statistics of sliding range
+        left_smaller = [ sum( r[i] < r[j] for i in range(0,j) ) for j in range(size) ]
+        right_bigger = [ sum( r[j] < r[k] for k in range(j+1, size) ) for j in range(size)]
+        
+        
+        return sum( left_smaller[j] * right_bigger[j] + ( j - left_smaller[j] ) * ( size-1 - j - right_bigger[j] ) for j in range( 0, size)  )
+        
+        
+        
+#-3. Number of Students Doing Homework at a Given Time
+
+class Solution:
+    def busyStudent(self, startTime: List[int], endTime: List[int], queryTime: int) -> int:
+        count = 0
+        for i in range(len(startTime)):
+            if startTime[i] <= queryTime  <=endTime[i]:
+                count += 1
+        return count
+        
+        
+#-4. Number of Steps to Reduce a Number to Zero
+
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        steps = 0 #keep track of steps
+        while num!=0: #stop when num becomes zero
+            if num%2 ==0: #if even //2
+                num /= 2
+            else: # subtract 1
+                num -= 1
+            steps +=1 #update as one step
+        return steps
+        
+        
+#-5. COUNTING BITS
+
+class Solution:
+    def countBits(self, N: int) -> List[int]:
+        stem = [0]
+        while len(stem) < N+1:
+            stem.extend([s + 1 for s in stem])
+            
+        return stem[:N+1]
