@@ -1,0 +1,43 @@
+
+#CODE SUCCESSFULLY EXECUTED BY GURJEET SINGH 
+
+#-1. SINGLE NUMBER 
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        res=0
+        for n in nums:
+            res^=n
+        return res 
+        
+        
+ #-2. SORT INTEGERS BY THE NUMBER OF 1 BITS 
+ 
+ class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        
+        return sorted(arr , key = lambda x: bin(x)[2:].count('1'))
+        
+        
+ #-3. SINGLE NUMBER III
+ 
+ class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        freq = Counter(nums)
+        return [x for x in freq if freq[x] == 1]
+        
+     
+     
+#-4. SUBSETS 
+class Solution(object):
+    def subsets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        res, path = [], []
+        def inner(nums, path, res):
+            for i, el in enumerate(nums):
+                inner(nums[i+1:], path + [el], res)
+            res.append(path)
+        inner(nums, path, res)
+        return res
