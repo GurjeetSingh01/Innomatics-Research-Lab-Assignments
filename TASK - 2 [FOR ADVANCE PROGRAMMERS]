@@ -1,0 +1,70 @@
+#CODE EXECUTED BY GURJEET SINGH 
+
+
+#-1.Defanging an IP Address
+
+class Solution:
+def defangIPaddr(self, address: str) -> str:
+address = address.split('.')
+return '[.]'.join(address)
+
+#-2.Find Numbers with Even Number of Digits
+
+class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        G=[]
+        for val in nums:
+            G.append(len(str(val)))
+        count=0
+        for val in G:
+            if(val%2==0):
+                count+=1
+        return count
+        
+        
+#-3.Number of Good Pairs
+
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        my_count = 0
+        my_dict = {}
+        
+        for G in nums:
+            # Check to see if number has already been encountered
+            # and increase count by the number of previous instances
+            my_count += my_dict.get(G, 0) 
+
+            # Increase the count of previous observation
+            # Or store newly encountered number along with its count
+            my_dict[G] = my_dict.get(G, 0) + 1
+                
+        return my_count
+    
+ 
+#-4. How many numbers are smaller than the current numbers
+
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        # in sorted_num every num's i(index) shows just how many numbers are smaller than it, 
+        # so we just add the indexes and return it.
+        sorted_nums = sorted(nums)
+        return [sorted_nums.index(num) for num in nums]
+        
+#-5. Subtract the Product and Sum of Digits of an Integer
+
+from numpy import prod
+
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        return (lambda n: prod(n) - sum(n))(list(map(int,str(n))))
+        
+        
+#-6. XOR Operation in an Array
+
+class Solution:
+    def xorOperation(self, n: int, start: int) -> int:
+        new_list = [start + 2 * i for i in range(n)]
+        output = 0
+        for i in new_list:
+            output = output ^ i
+        return output
