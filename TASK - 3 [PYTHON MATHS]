@@ -1,0 +1,51 @@
+#CODE SUCCESSFULLY EXECUTED BY GURJEET SINGH
+
+#-1. POLAR COORDINATES
+import cmath
+print(*cmath.polar(complex(input())), sep='\n')
+
+#-2. FIND ANGLE MBC
+import math
+
+degree_sign= u'\N{DEGREE SIGN}'
+
+AB = int(raw_input())
+BC = int(raw_input())
+hyp = math.pow(((AB*AB) + (BC*BC)), 0.5)
+
+num = (BC*BC) + (hyp*hyp) - (AB*AB)
+den = (2*(BC*hyp))
+angle_C = math.degrees(math.acos(num/den))
+
+print (str(int(round(angle_C))) + degree_sign)
+
+
+#-3. TRIANGLE QUEST-2
+
+for i in range(1,int(input())+1): 
+    print (((10**i - 1)//9)**2)
+    
+    
+#-4. MOD DIVMOD
+
+print('{0}\n{1}\n({0}, {1})'.format(*divmod(int(input()), int(input()))))
+
+
+#-5. POWER - MODPOWER
+
+a,b,m = [int(input()) for _ in '123']
+print(pow(a,b),pow(a,b,m),sep='\n')
+
+
+#-6. INTEGERS COME IN ALL SIZES
+
+a,b,c,d = (int(input()) for _ in range(4))
+print (pow(a,b)+pow(c,d))
+
+
+
+
+#-7. TRIANGLE QUEST
+
+for i in range(1,int(input())):
+    print(i * (10**i - 1)//9)
