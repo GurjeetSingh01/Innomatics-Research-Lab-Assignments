@@ -1,0 +1,78 @@
+#CODE SUCCESSFULLY EXECUTED BY GURJEET SINGH
+
+#-1. SWAP CASE
+
+def swap_case(s):
+    return s.swapcase()
+
+if __name__ == '__main__':
+    s = raw_input()
+    result = swap_case(s)
+    print result
+    
+    
+    
+#-2. MUTATIONS
+
+def mutate_string(s, i, c):
+    result = list(s)
+    result[position] = c
+    return ''.join(result)
+
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+    
+    
+#-3. FIND A STRING
+def count_substring(string, sub_string):
+    count = 0
+    for i in range(0, len(string)-len(sub_string)+1):
+        l = i
+        for j in range(0, len(sub_string)):
+            if string[l] == sub_string[j]:
+                l +=1
+                if j == len(sub_string)-1:
+                    count = count + 1
+                else:
+                    continue
+            else:
+                break
+            
+    return count
+
+
+
+if __name__ == '__main__':
+    string = raw_input().strip()
+    sub_string = raw_input().strip()
+    
+    count = count_substring(string, sub_string)
+    print count
+    
+    
+    
+#-4. STRING VALIDATORS 
+
+string = raw_input()
+l=list(string)
+a,b,c,d,e=False,False,False,False,False
+for i in l:
+    if i.isalnum():
+        a=True
+    if i.isalpha():
+        b=True
+    if i.isdigit():
+        c=True
+    if i.islower():
+        d=True
+    if i.isupper():
+        e=True
+print a
+print b
+print c
+print d
+print e
