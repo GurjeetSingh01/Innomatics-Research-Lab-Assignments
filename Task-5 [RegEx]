@@ -1,0 +1,19 @@
+#CODE SUCCESSFULLY EXECUTED BY GURJEET SINGH 
+
+#.1-DETECT FLOATING POINT NUMBER 
+
+
+import re
+
+m = int(raw_input())
+for i in range(0,m):
+    temp = raw_input()
+    print bool(re.match(r"^[-+]?[0-9]*\.[0-9]+$",temp))
+    #print bool(re.search('^[+-]?\d*\.?\d+$',(raw_input())))
+    
+    
+#.2- Re.Split()
+
+regex_pattern = r"\D+"
+import re
+print("\n".join(re.split(regex_pattern, raw_input())))
