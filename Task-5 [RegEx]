@@ -17,3 +17,25 @@ for i in range(0,m):
 regex_pattern = r"\D+"
 import re
 print("\n".join(re.split(regex_pattern, raw_input())))
+
+
+
+#.3- group(),groups()
+
+import re
+m = re.search(r"([a-z0-9])\1+", input())
+print(m.group(1) if m else -1)
+
+
+#.4- re.findall() re.finditer()
+
+import re
+s=input()
+if(len(re.findall(r'[aeiouAEIOU]{2,}',s))==0):
+    print(-1)
+for i in re.finditer(r'[aeiouAEIOU]{2,}',s):
+    
+    if(0 in i.span() or len(s) in i.span()):
+        continue
+    else:
+        print(i.group())
