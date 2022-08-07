@@ -1,0 +1,48 @@
+#ALL CODES SUCCESSFULLY EXECUTED BY GURJEET SINGH
+
+1.) SUBSETS
+
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        
+        def recur(index,arr,ans):
+            nonlocal res 
+            res.append(copy.deepcopy(ans)) #copying the value of ans at that particular instance
+            for i in range(index,len(arr)):
+                if i != index and arr[i] == arr[i-1]: #checking for duplicates and making sure not to append them in the result array
+                    continue
+                ans.append(arr[i]) #picking the element of the nums
+                recur(i+1,arr,ans) #recursive call
+                ans.pop() #removing the element or not picking the element                
+        
+        
+        nums.sort()
+        res = []
+        recur(0,nums,[])
+        return res
+		
+    
+2.) HAMMING DISTANCE
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        x, y = bin(x).replace('0b',''), bin(y).replace('0b','')
+        nx, ny, hd = len(x), len(y), 0
+        if nx > ny:
+            y = y.zfill(nx)
+        elif nx < ny:
+            x = x.zfill(ny)
+        for i in range(max(nx, ny)):
+            if x[i]!=y[i]:
+                hd += 1
+        return hd
+        
+        
+ 3.) SINGLE NUMBER II
+ class Solution:
+ def singleNumber(self, nums: List[int]) -> int:      
+        y = set([x for x in nums if nums.count(x) > 1])        
+        x = sum(nums)        
+        y = sum(y)
+        result = x - (3 * y)
+        return result
