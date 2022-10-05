@@ -48,4 +48,4 @@ print (pow(a,b)+pow(c,d))
 #-7. TRIANGLE QUEST
 
 for i in range(1,int(input())):
-    print(i * (10**i - 1)//9) lkjl 
+    print(i * (10**i - 1)//9) 
